@@ -94,6 +94,10 @@ pre {
   grid-template-columns: 55% 45%;
 }
 
+.showcase-text {
+  animation: slideInFromLeft 0.8s ease-in;
+}
+
 .showcase-form {
   top: 60px;
   position: relative;
@@ -102,6 +106,7 @@ pre {
   padding: 40px;
   z-index: 100;
   justify-self: flex-end;
+  animation: slideInFromRight 0.8s ease-in;
 }
 
 .showcase-form .form-control {
@@ -141,6 +146,7 @@ pre {
 
 .stats {
   padding-top: 100px;
+  animation: slideInFromBottom 0.8s ease-in;
 }
 
 .stats-heading {
@@ -158,6 +164,8 @@ pre {
 
 /* CLI */
 .cli .grid {
+  animation: slideInFromBottom 0.8s ease-in;
+
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
@@ -251,6 +259,47 @@ pre {
   font-weight: bold;
 }
 
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 1000px) {
   .grid,
   .showcase .grid,
@@ -269,12 +318,14 @@ pre {
   .showcase-text {
     text-align: center;
     margin-top: 40px;
+    animation: slideInFromTop 0.5s ease-in;
   }
+
   .showcase-form {
     justify-self: center;
     margin: auto;
+    animation: slideInFromBottom 0.5s ease-in;
   }
-
   .cli .grid > *:first-child {
     grid-column: 1;
     grid-row: 1;
